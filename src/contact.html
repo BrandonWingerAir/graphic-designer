@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,300,400,500,600,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./scss/main.scss">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="contact" id="openMenu">
+    <div class="menu-icon">
+      <i class="fa fa-bars" id="open" aria-hidden="true" onclick="openNav()"></i>
+      <i class="fa fa-times hide-close" id="close" aria-hidden="true" onclick="closeNav()"></i>
+    </div>
+    <section id="menu">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/work.html">Portfolio</a>
+        <a href="/resume.html">Resume</a>
+        <!-- <a href="/contact.html">Contact</a> -->
+      </nav>
+    </section>
+    <section class="info-section">
+      <a href="/">
+        <div class="logo">
+          Jane
+        </div>
+      </a>
+      <div class="info-box">
+          <h4>Email</h4>
+          <p>janejohnson@domain.com</p>
+          <h4>Phone</h4>
+          <p>098-765-4321</p>
+        <h4>Find Me On</h4>
+        <div class="icon-section">
+          <a href="#!">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+          <a href="#!">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#!">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#!">
+            <i class="fa fa-dribbble" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="content-area">
+      <div class="img-container">
+        <h1 class="title-mobile">Contact Me</h1>
+        <div class="form-section">
+          <form action="https://formspree.io/brandonwinger-air@outlook.com"
+    method="POST">
+            <h4>Send a Message</h4>
+            <div class="status">
+
+            </div>
+            <input type="text" name="Name" required placeholder="NAME" class="name">
+            <input type="email" name="Email" required placeholder="EMAIL" class="email">
+            <input type="text" name="Budget" placeholder="BUDGET" class="budget">
+            <textarea name="Message" rows="4" required placeholder="MESSAGE" class="message"></textarea>
+
+            <button type="submit" class="submit">Send Message</button>
+
+          </form>
+        </div>
+      </div>
+      <div class="contact-section">
+        <div class="contact-info">
+          <h1>Contact Me</h1>
+          <div class="contact-box">
+            <h5>Phone</h5>
+            <p>555-555-5555</p>
+          </div>
+          <div class="contact-box">
+            <h5>Email</h5>
+            <p>janejohnson@domain.com</p>
+          </div>
+          <div class="contact-box">
+            <h5>Address</h5>
+            <p>77 Street Ave, Ridgewood NY 55555</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/index.js" type="text/javascript"></script>
+    <script>
+      // Menu
+      function openNav() {
+        var menuOpen = document.getElementById("openMenu");
+        menuOpen.classList.add("menu-active");
+
+        var hideOpen = document.getElementById("open");
+        hideOpen.classList.add("hide-open");
+
+        var showClose = document.getElementById("close");
+        showClose.classList.remove("hide-close");
+      }
+
+      function closeNav() {
+
+        var menuClose = document.getElementById("openMenu");
+        menuClose.classList.remove("menu-active");
+
+        var hideClose = document.getElementById("close");
+        hideClose.classList.add("hide-close");
+
+        var showOpen = document.getElementById("open");
+        showOpen.classList.remove("hide-open");
+      }
+
+      // Contact
+      $(document).ready(function () {
+        $('.submit').click(function (event) {
+          console.log('Clicked button');
+
+          var name = $('.name').val()
+          var email = $('.email').val()
+          var budget = $('.budget').val()
+          var message = $('.message').val()
+          var status = $('.status')
+          status.empty()
+
+          if(name.length >= 2) {
+          } else {
+            event.preventDefault()
+            status.append('<div>* Please enter your name</div>');
+          }
+
+          if(email.length > 5 && email.includes('@') && email.includes('.')) {
+          } else {
+            event.preventDefault()
+            status.append('<div>* Email was not valid</div>');
+          }
+
+          if(message.length >= 10) {
+          } else {
+            event.preventDefault()
+            status.append('<div>* Message must be at least 10 characters</div>');
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

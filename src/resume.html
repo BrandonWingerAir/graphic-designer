@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,300,400,500,600,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./scss/main.scss">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="resume" id="openMenu">
+    <div class="menu-icon">
+      <i class="fa fa-bars" id="open" aria-hidden="true" onclick="openNav()"></i>
+      <i class="fa fa-times hide-close" id="close" aria-hidden="true" onclick="closeNav()"></i>
+    </div>
+    <section id="menu">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/work.html">Portfolio</a>
+        <a href="/resume.html">Resume</a>
+        <!-- <a href="/contact.html">Contact</a> -->
+      </nav>
+    </section>
+    <section class="info-section">
+      <a href="/">
+        <div class="logo">
+          Jane
+        </div>
+      </a>
+      <div class="info-box">
+        <h4>Email</h4>
+        <p>janejohnson@domain.com</p>
+        <h4>Phone</h4>
+        <p>098-765-4321</p>
+        <h4>Find Me On</h4>
+        <div class="icon-section">
+          <a href="#!">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+          <a href="#!">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#!">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#!">
+            <i class="fa fa-dribbble" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="content-area">
+      <div class="scroll-section">
+        <!-- Education Starts -->
+        <div class="category">
+          <div class="title">
+            <h1>Education</h1>
+          </div>
+          <div class="exp-section">
+            <div class="exp-box">
+              <h5>Web Design & New Media</h5>
+              <p>New York University, New York</p>
+              <p>Session: 2017 - Present</p>
+            </div>
+            <div class="exp-box">
+              <h5>Graphic Design</h5>
+              <p>Rochester Institute of Technology, New York</p>
+              <p>Session: 2015 - 2017</p>
+            </div>
+            <div class="exp-box">
+              <h5>Illustration</h5>
+              <p>School of Visual Arts, New York</p>
+              <p>Session: 2012 - 2014</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Ends -->
+
+        <!-- Work Experience Starts -->
+
+        <div class="category">
+          <div class="title">
+            <h1>Work Experience</h1>
+          </div>
+          <div class="exp-section">
+            <div class="exp-box">
+              <h5>Web Designer</h5>
+              <p>Digital Media</p>
+              <p>Session: 2015 - Present</p>
+            </div>
+            <div class="exp-box">
+              <h5>Junior Designer</h5>
+              <p>New York Mediums</p>
+              <p>Session: 2014 - 2015</p>
+            </div>
+            <div class="exp-box">
+              <h5>Internship</h5>
+              <p>123 Design</p>
+              <p>Session: 2012 - 2014</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/index.js" type="text/javascript"></script>
+    <script>
+      function openNav() {
+        var menuOpen = document.getElementById("openMenu");
+        menuOpen.classList.add("menu-active");
+
+        var hideOpen = document.getElementById("open");
+        hideOpen.classList.add("hide-open");
+
+        var showClose = document.getElementById("close");
+        showClose.classList.remove("hide-close");
+      }
+
+      function closeNav() {
+
+        var menuClose = document.getElementById("openMenu");
+        menuClose.classList.remove("menu-active");
+
+        var hideClose = document.getElementById("close");
+        hideClose.classList.add("hide-close");
+
+        var showOpen = document.getElementById("open");
+        showOpen.classList.remove("hide-open");
+      }
+    </script>
+  </body>
+</html>
